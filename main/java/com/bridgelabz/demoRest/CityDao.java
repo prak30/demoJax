@@ -34,6 +34,12 @@ public class CityDao {
 		cities.removeIf(x-> x.getCityId() == id);
 		return cities;
 	}
+	
+	List<City> updateCity(int id, String cityName){
+		cities.stream().filter(x->x.getCityId()== id)
+		.collect(Collectors.toList()).get(0).setCityName(cityName);
+		return cities;
+	}
 
 	
 	
