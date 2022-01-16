@@ -3,6 +3,7 @@ package com.bridgelabz.demoRest;
 
 import java.util.List;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -36,6 +37,14 @@ public class CityResource {
 	public List<City> addCity(City city){
 		dao.createCity(city);
 		return dao.getAllCity();
+	}
+	
+	@DELETE
+	@Path("/removeCity/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<City> removeCity(@PathParam("id") int cityId){
+
+		return dao.removeCity(cityId);
 	}
 
 }

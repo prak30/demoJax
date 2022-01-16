@@ -2,8 +2,6 @@ package com.bridgelabz.demoRest;
 
 
 import java.util.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class CityDao {
@@ -27,9 +25,18 @@ public class CityDao {
 				.collect(Collectors.toList()).get(0);
 	}
 	
-	void createCity(City city){
+	List<City> createCity(City city){
 		cities.add(city);
+		return cities;
 	}
+	
+	public List<City> removeCity(int id){
+		cities.removeIf(x-> x.getCityId() == id);
+		return cities;
+	}
+
+	
+	
 	
 
 }
