@@ -27,5 +27,9 @@ public class CityDao {
 				.collect(Collectors.toList()).get(0);
 	}
 	
+	void createCity(City city){
+		cities.add(city);
+	}
+	
 
 }
